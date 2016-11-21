@@ -1,11 +1,10 @@
 function displayValue(num) {
-  var expression = document.getElementById('result-field');
+var expression = document.getElementById('result-field');
   expression.innerHTML += num;
 
-var str = expression.innerHTML;
-var res = str.indexOf(0);
-console.log(res);
-if (res === 0) {
+var valueToCheck = expression.innerHTML.indexOf(0);
+
+if (valueToCheck === 0) {
   expression.innerHTML = expression.innerHTML.substring(1);
   }
 
@@ -16,6 +15,11 @@ function getResult() {
 }
 
 function resetC() {
-  
+
   document.getElementById('result-field').innerHTML = 0;
 }
+
+function deleteLast() {
+  var expression = document.getElementById('result-field');
+  expression.innerHTML = expression.innerHTML.slice(0, -1);
+  }
